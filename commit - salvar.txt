@@ -1,0 +1,5 @@
+commit -> salvar
+push -> enviar servidor
+pull -> buscar no servidor
+
+clone -> baixar
