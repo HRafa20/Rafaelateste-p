@@ -13,6 +13,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         List<String>usuarios = new ArrayList<>();
+        List<String>produtos = new ArrayList<>();
 
 
 
@@ -50,7 +51,7 @@ public class Main {
                     //consultar por nome
                     break;
                 case 4:
-                    cadastrarProdutos(scan, Produtos);
+                    Cadastrarproduto(scan, produtos);
                     
                 case 10:
                     System.out.println("Encerrando o sistema...Até logo!");
@@ -106,37 +107,39 @@ public class Main {
         System.out.println(" usuario inserido com sucesso!");
 
     }
-    public static void ListarTodosUsuarios(@NotNull List<String>usuarios){
+    public static void ListarTodosUsuarios(@NotNull List<String>usuarios) {
 
 
         System.out.println("Lista de usuarios");
 
-        if (usuarios.isEmpty()){
+        if (usuarios.isEmpty()) {
             System.out.println("Nenhum usuario encontrado!");
 
-        }else {
+        } else {
 
-            for (int i= 0; i< usuarios.size();i++){
+            for (int i = 0; i < usuarios.size(); i++) {
 
-                System.out.println( "código:" + (i +1) + ". " + usuarios.get(i).toString());
+                System.out.println("código:" + (i + 1) + ". " + usuarios.get(i).toString());
             }
-            
-            
-            public static void Cadastrarproduto (Scanner scan, List<String> produtos){
-                
-                String dados = "";
-                
-                System.out.println("-------- Lista de Produtos---------");
-                System.out.println("Nome do Produto: ");
-                dados = scan.nextLine();
-                System.out.println("Cor do Produto: ");
-                dados = scan.nextLine();
-                System.out.println("Modelo do Produto: ");
-                dados = scan.nextLine();
-                
-                produtos.add(dados);
-                
+
+
         }
+    }
+
+    public static void Cadastrarproduto(Scanner scan, List<String> produtos){
+
+        String dados = "";
+
+        System.out.println("-------- Lista de Produtos---------");
+        System.out.println("Nome do Produto: ");
+        dados = scan.nextLine();
+        System.out.println("Cor do Produto: ");
+        dados = scan.nextLine();
+        System.out.println("Modelo do Produto: ");
+        dados = scan.nextLine();
+
+        produtos.add(dados);
+
     }
 }
 
