@@ -9,6 +9,8 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    private static Object produtos;
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -52,6 +54,10 @@ public class Main {
                     break;
                 case 4:
                     Cadastrarproduto(scan, produtos);
+                    break;
+                case 5:
+                    Listarprodutos(produtos);
+                    break;
                     
                 case 10:
                     System.out.println("Encerrando o sistema...Até logo!");
@@ -67,6 +73,9 @@ public class Main {
 
     }
 
+    private static void Listarprodutos(List<String> produtos) {
+    }
+
 
     public static void exibirMenu() {
 
@@ -75,6 +84,7 @@ public class Main {
         System.out.println("2 - Listar todos");
         System.out.println("3 - buscar por nome");
         System.out.println("4 - Produtos");
+        System.out.println("5 - Listar Produtos");
         System.out.println("10 - Sair");
         System.out.println("===========================");
     }
@@ -141,7 +151,23 @@ public class Main {
         produtos.add(dados);
 
     }
+
+     Main(@NotNull List<String>produtos) {
+
+
+        System.out.println("Lista de usuarios");
+
+        if (produtos.isEmpty()) {
+            System.out.println("Nenhum usuario encontrado!");
+
+        } else {
+
+            for (int i = 0; i < produtos.size(); i++) {
+
+                System.out.println("código:" + (i + 1) + ". " + produtos.get(i).toString());
+            }
+
+
+        }
+    }
 }
-
-
-
