@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     private static Object produtos;
 
@@ -57,6 +56,9 @@ public class Main {
                     break;
                 case 5:
                     Listarprodutos(produtos);
+                    break;
+                case 8:
+                    capturaNotas(scan);
                     break;
                     
                 case 10:
@@ -151,23 +153,70 @@ public class Main {
         produtos.add(dados);
 
     }
+//
+//     Main(@NotNull List<String>produtos) {
+//
+//
+//        System.out.println("Lista de usuarios");
+//
+//        if (produtos.isEmpty()) {
+//            System.out.println("Nenhum usuario encontrado!");
+//
+//        } else {
+//
+//            for (int i = 0; i < produtos.size(); i++) {
+//
+//                System.out.println("código:" + (i + 1) + ". " + produtos.get(i).toString());
+//            }
+//
+//
+//        }
 
-     Main(@NotNull List<String>produtos) {
+        public static void capturaNotas(Scanner scanner){
+
+    double notas = 0;
+    int quantidade = 0;
+
+    boolean capturar = true;
+
+    while (capturar) {
+
+        double nota;
+
+        System.out.println("Digite a nota ou 9999 para resultado:");
+        nota = scanner.nextDouble();
+
+        if (nota < 0 ){
+
+            System.out.println(" Nota inválida");
+            continue;
+
+        }
+
+        if (nota == 9999){
+            capturar = false;
+            continue;
+        }
+        notas += nota;
+        quantidade++;
+
+        double media = calcularMedia(notas, quantidade);
+
+        System.out.println("Media do aluno é igual a "+media);
+    }
+
+        }
+
+        public static double calcularMedia(double notas, int quantidade){
+
+        if (notas == 0){
+            return 0;
+        }
+        return notas/quantidade;
 
 
-        System.out.println("Lista de usuarios");
 
-        if (produtos.isEmpty()) {
-            System.out.println("Nenhum usuario encontrado!");
-
-        } else {
-
-            for (int i = 0; i < produtos.size(); i++) {
-
-                System.out.println("código:" + (i + 1) + ". " + produtos.get(i).toString());
-            }
 
 
         }
-    }
-}
+     }
