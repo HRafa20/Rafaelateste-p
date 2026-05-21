@@ -202,6 +202,23 @@ public class Main {
 
         double media = calcularMedia(notas, quantidade);
 
+        if (media >= 7){
+            System.out.println("Media do aluno é igual a "+media);
+            System.out.println("Aprovado");
+        }
+
+        if (media >= 5.0 && media <= 6.9){
+            System.out.println("Media do aluno é igual a "+media);
+            System.out.println("Recuperação");
+        }
+
+        if (media <5){
+            System.out.println("Media do aluno é igual a "+media);
+            System.out.println("Reprovado");
+
+
+        }
+
         System.out.println("Media do aluno é igual a "+media);
     }
 
